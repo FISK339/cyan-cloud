@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  items: {
+    title: string;
+    href: string;
+  }[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<div class="footer__column">
+  <div class="footer__title">
+    <h3>{title}</h3>
+  </div>
+
+  <div class="footer__catalog-items">
+    {items.map((item) => <a href={item.href}>{item.title}</a>)}
+  </div>
+</div>

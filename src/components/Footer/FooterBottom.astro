@@ -1,0 +1,29 @@
+---
+interface Props {
+  developerInfo: {
+    text: string;
+    href: string;
+    button: string;
+  };
+}
+
+const { developerInfo } = Astro.props;
+---
+
+<div class="footer__bottom">
+  <div class="footer__bottom-left">
+    <span>© 2024 CLS. Все права защищены.</span>
+
+    <a href={developerInfo.href}>
+      {developerInfo.text}
+    </a>
+  </div>
+
+  <div class="footer__bottom-right">
+    <a href={developerInfo.href}>
+      <button class="dev-btn">
+        {developerInfo.button}
+      </button>
+    </a>
+  </div>
+</div>

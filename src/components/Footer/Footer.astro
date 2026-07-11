@@ -1,0 +1,289 @@
+---
+import CLSLogo from "@assets/CLSLogo.svg";
+
+import FooterColumn from "./FooterColumn.astro";
+import FooterButtons from "./FooterButtons.astro";
+import FooterBottom from "./FooterBottom.astro";
+
+import {
+  navItemsCatalogue,
+  navItemsAbout,
+  navItemsContacts,
+  navItemsForClients,
+  navItemsDevInfo,
+} from "../../data/footer.ts";
+---
+
+<footer class="footer">
+  <div class="footer__body">
+    <a href="/" class="logo">
+      <img src={CLSLogo.src} alt="CLS Logo" />
+    </a>
+
+    <FooterColumn title="Каталог" items={navItemsCatalogue} />
+
+    <FooterColumn title="О компании" items={navItemsAbout} />
+
+    <FooterColumn title="Контакты" items={navItemsContacts} />
+  </div>
+
+  <FooterBottom developerInfo={navItemsDevInfo} />
+</footer>
+
+<!-- OLD CODE -->
+
+<!-- --- 
+
+import CLSLogo from "@assets/CLSLogo.svg";
+
+const navItemsCatalogue = [
+  { title: "1 Элемент каталога", href: "/catalog" },
+  { title: "2 Элемент каталога", href: "/catalog" },
+  { title: "3 Элемент каталога", href: "/catalog" },
+  { title: "4 Элемент каталога", href: "/catalog" },
+  { title: "5 Элемент каталога", href: "/catalog" },
+  { title: "6 Элемент каталога", href: "/catalog" },
+  { title: "7 Элемент каталога", href: "/catalog" },
+  { title: "8 Элемент каталога", href: "/catalog" },
+  { title: "9 Элемент каталога", href: "/catalog" },
+  { title: "10 Элемент каталога", href: "/catalog" },
+];
+
+const navItemsAbout = [
+  { title: "1 Элемент Компании", href: "/about" },
+  { title: "2 Элемент Компании", href: "/about" },
+  { title: "3 Элемент Компании", href: "/about" },
+  { title: "4 Элемент Компании", href: "/about" },
+  { title: "5 Элемент Компании", href: "/about" },
+];
+
+const navItemsContacts = [
+  { title: "1 Элемент Контактов", href: "/contacts" },
+  { title: "2 Элемент Контактов", href: "/contacts" },
+  { title: "3 Элемент Контактов", href: "/contacts" },
+  { title: "4 Элемент Контактов", href: "/contacts" },
+  { title: "5 Элемент Контактов", href: "/contacts" },
+  { title: "6 Элемент Контактов", href: "/contacts" },
+];
+
+const navItemsForClients = [
+  { button: "1 Кнопка для клиентов", href: "/" },
+  { button: "2 Кнопка для клиентов", href: "/" },
+  { button: "3 Кнопка для клиентов", href: "/" },
+  { button: "4 Кнопка для клиентов", href: "/" },
+];
+
+const navItemsDevInfo = [
+  { title: "Разработано MouseDevelopment - разрботка сайтов на словах" },
+  { button: "Тык!", href: "https://mouse-development.ru" },
+];
+---
+
+<footer class="footer">
+  <div class="footer__body">
+    <div class="container footer_container">
+      <a href="/" class="logo">
+        <img src={CLSLogo.src} alt="CLS Logo" />
+      </a>
+    </div>
+    <div class="footer__catalog">
+      <div class="footer__title">
+        <h3>Каталог</h3>
+      </div>
+      <div class="footer__catalog-items">
+        {
+          navItemsCatalogue.map((item) => (
+            // <li>
+            <a href={item.href}>{item.title}</a>
+            // </li>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="footer__about">
+      <div class="footer__title">
+        <h3>О компании</h3>
+      </div>
+      <div class="footer__about-items">
+        <nav class="nav">
+          <ul class="nav__list">
+            {
+              navItemsAbout.map((item) => (
+                <li>
+                  <a href={item.href}>{item.title}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="footer__contacts">
+      <div class="footer__title">
+        <h3>Контакты</h3>
+      </div>
+      <div class="footer__contacts-items">
+        <nav class="nav">
+          <ul class="nav__list">
+            {
+              navItemsContacts.map((item) => (
+                <li>
+                  <a href={item.href}>{item.title}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="footer__for__clients">
+      <div class="footer__title">
+        <h3>Для клиентов</h3>
+      </div>
+      <div class="footer__for__clients-items">
+        <nav class="nav">
+          <ul class="nav__list">
+            {
+              navItemsForClients.map((item) => (
+                <li>
+                  <a href={item.href}>
+                    {item.button && (
+                      <button class="clients-btn">{item.button}</button>
+                    )}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="footer__bottom-left">
+      <span>© 2024 CLS. Все права защищены.</span>
+      <nav class="nav">
+        <span class="nav__list">
+          {navItemsDevInfo.map((item) => <a href={item.href}>{item.title}</a>)}
+        </span>
+      </nav>
+    </div>
+    <div class="footer__bottom-right">
+      <nav class="nav">
+        <ul class="nav__list">
+          {
+            navItemsDevInfo.map((item) => (
+              <li>
+                <a href={item.href}>
+                  {item.button && (
+                    <button class="dev-btn">{item.button}</button>
+                  )}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<style>
+  * {
+    font-family: "Roboto", sans-serif;
+  }
+  .footer {
+    padding: 80px 80px 30px 80px;
+    background: #575757;
+  }
+
+  .footer__title {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    color: #151515;
+    margin-bottom: 19px;
+  }
+
+  .footer__body {
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    column-gap: 50px;
+    row-gap: 50px;
+    margin-right: 100px;
+    margin-left: 100px;
+    flex-wrap: wrap;
+  }
+
+  .footer_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer__catalog-items {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 10px;
+    column-gap: 23px;
+  }
+
+  .footer__catalog-items a {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 143%;
+    color: #666;
+  }
+
+  .footer__about-items {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 10px;
+    column-gap: 23px;
+  }
+  .footer__contacts-items {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 10px;
+    column-gap: 23px;
+  }
+  .footer__for__clients-items {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 10px;
+    column-gap: 23px;
+  }
+
+  .footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 30px;
+    border-top: 1px solid #63636333;
+    margin-top: 50px;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+  .nav__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav__list li {
+    margin-right: 2rem;
+  }
+
+  .footer__catalog-items a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+</style> -->
