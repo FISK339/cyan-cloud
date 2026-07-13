@@ -1,17 +1,12 @@
 ---
 import CLSLogo from "@assets/CLSLogo.svg";
 
+import "./footer.css";
 import FooterColumn from "./FooterColumn.astro";
 import FooterButtons from "./FooterButtons.astro";
 import FooterBottom from "./FooterBottom.astro";
 
-import {
-  navItemsCatalogue,
-  navItemsAbout,
-  navItemsContacts,
-  navItemsForClients,
-  navItemsDevInfo,
-} from "../../data/footer.ts";
+import { navItems } from "@data/footer.ts";
 ---
 
 <footer class="footer">
@@ -20,14 +15,16 @@ import {
       <img src={CLSLogo.src} alt="CLS Logo" />
     </a>
 
-    <FooterColumn title="Каталог" items={navItemsCatalogue} />
+    <FooterColumn title="Каталог" items={navItems.catalogue} />
 
-    <FooterColumn title="О компании" items={navItemsAbout} />
+    <FooterColumn title="О компании" items={navItems.about} />
 
-    <FooterColumn title="Контакты" items={navItemsContacts} />
+    <FooterColumn title="Контакты" items={navItems.contacts} />
+
+    <FooterButtons title="Для клиентов" items={navItems.forClients} />
   </div>
 
-  <FooterBottom developerInfo={navItemsDevInfo} />
+  <FooterBottom developerInfo={navItems.devInfo} />
 </footer>
 
 <!-- OLD CODE -->

@@ -1,13 +1,7 @@
 ---
-interface Props {
-  developerInfo: {
-    text: string;
-    href: string;
-    button: string;
-  };
-}
+import type { FooterBottomProps } from "./types";
 
-const { developerInfo } = Astro.props;
+const { developerInfo } = Astro.props as FooterBottomProps;
 ---
 
 <div class="footer__bottom">
@@ -15,7 +9,7 @@ const { developerInfo } = Astro.props;
     <span>© 2024 CLS. Все права защищены.</span>
 
     <a href={developerInfo.href}>
-      {developerInfo.text}
+      {developerInfo.title}
     </a>
   </div>
 

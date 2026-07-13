@@ -1,13 +1,7 @@
 ---
-interface Props {
-  title: string;
-  items: {
-    button: string;
-    href: string;
-  }[];
-}
+import type { FooterButtonsProps } from "./types";
 
-const { title, items } = Astro.props;
+const { title, items } = Astro.props as FooterButtonsProps;
 ---
 
 <div class="footer__column">

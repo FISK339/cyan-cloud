@@ -1,5 +1,6 @@
+import type { FooterBottomProps } from "@components/Footer";
 
-export const navItemsCatalogue = [
+const catalogue = [
   { title: "1 Элемент каталога", href: "/catalog" },
   { title: "2 Элемент каталога", href: "/catalog" },
   { title: "3 Элемент каталога", href: "/catalog" },
@@ -12,7 +13,7 @@ export const navItemsCatalogue = [
   { title: "10 Элемент каталога", href: "/catalog" },
 ];
 
-export const navItemsAbout = [
+const navItemsAbout = [
   { title: "1 Элемент Компании", href: "/about" },
   { title: "2 Элемент Компании", href: "/about" },
   { title: "3 Элемент Компании", href: "/about" },
@@ -20,7 +21,7 @@ export const navItemsAbout = [
   { title: "5 Элемент Компании", href: "/about" },
 ];
 
-export const navItemsContacts = [
+const navItemsContacts = [
   { title: "1 Элемент Контактов", href: "/contacts" },
   { title: "2 Элемент Контактов", href: "/contacts" },
   { title: "3 Элемент Контактов", href: "/contacts" },
@@ -29,15 +30,23 @@ export const navItemsContacts = [
   { title: "6 Элемент Контактов", href: "/contacts" },
 ];
 
-export const navItemsForClients = [
+const navItemsForClients = [
   { button: "1 Кнопка для клиентов", href: "/" },
   { button: "2 Кнопка для клиентов", href: "/" },
   { button: "3 Кнопка для клиентов", href: "/" },
   { button: "4 Кнопка для клиентов", href: "/" },
 ];
 
-export const navItemsDevInfo = [
-  { title: "Разработано MouseDevelopment - разрботка сайтов на словах" },
-  { button: "Тык!", href: "https://mouse-development.ru" },
-];
+const navItemsDevInfo: FooterBottomProps["developerInfo"] = {
+  title: "Разработано MouseDevelopment - разрботка сайтов на словах",
+  button: "Тык!",
+  href: "https://mouse-development.ru",
+};
 
+export const navItems = {
+  catalogue,
+  about: navItemsAbout,
+  contacts: navItemsContacts,
+  forClients: navItemsForClients,
+  devInfo: navItemsDevInfo,
+};
