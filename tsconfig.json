@@ -4,7 +4,7 @@
       "@components/*": ["./src/components/*"],
       "@assets/*": ["./src/assets/*"],
       "@layouts/*": ["./src/layouts/*"],
-      "@pages/*": ["./src/data/*"]
+      "@data/*": ["./src/data/*"]
     }
   },
   "extends": "astro/tsconfigs/strict",
