@@ -4,4 +4,8 @@ export interface BodyServicesProps {
     text: string;
     href: string;
   };
+  servicesImage: {
+    img: string;
+    alt: string;
+  };
 }

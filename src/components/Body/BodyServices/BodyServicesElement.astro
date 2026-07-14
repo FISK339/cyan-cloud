@@ -1,14 +1,12 @@
 ---
-import BodyServicesExample from "@assets/BodyServicesExample.png";
-
 import type { BodyServicesProps } from "./types";
 
-const { servicesInfo } = Astro.props as BodyServicesProps;
+const { servicesInfo, servicesImage } = Astro.props as BodyServicesProps;
 ---
 
 <div class="body__services-element">
   <div class="body__services-element-image">
-    <img src={BodyServicesExample.src} alt="Body Services Example" />
+    <img src={servicesImage.img} alt={servicesImage.alt} />
   </div>
 
   <div class="body__services-element-info">

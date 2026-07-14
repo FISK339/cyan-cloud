@@ -30,3 +30,12 @@ export const BodyServicesInfo = [
     href: "/services",
   },
 ];
+
+export const BodyServicesImages = [
+  { img: "@assets/BodyServicesExample.png", alt: "Услуга 1" },
+  { img: "@assets/BodyServicesExample.png", alt: "Услуга 2" },
+  { img: "@assets/BodyServicesExample.png", alt: "Услуга 3" },
+  { img: "@assets/BodyServicesExample.png", alt: "Услуга 4" },
+  { img: "@assets/BodyServicesExample.png", alt: "Услуга 5" },
+  { img: "@assets/BodyServicesExample.png", alt: "Услуга 6" },
+];

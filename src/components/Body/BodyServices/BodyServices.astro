@@ -2,7 +2,7 @@
 import "./BodyServices.css";
 
 import BodyServicesElement from "./BodyServicesElement.astro";
-import { BodyServicesInfo } from "@data/body.ts";
+import { BodyServicesInfo, BodyServicesImages } from "@data/body.ts";
 ---
 
 <div class="body__services">
@@ -12,8 +12,11 @@ import { BodyServicesInfo } from "@data/body.ts";
 
   <div class="body__services-grid">
     {
-      BodyServicesInfo.map((service) => (
-        <BodyServicesElement servicesInfo={service} />
+      BodyServicesInfo.map((service, index) => (
+        <BodyServicesElement
+          servicesInfo={service}
+          servicesImage={BodyServicesImages[index]}
+        />
       ))
     }
   </div>
