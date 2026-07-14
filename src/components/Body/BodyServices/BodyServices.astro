@@ -1,0 +1,20 @@
+---
+import "./BodyServices.css";
+
+import BodyServicesElement from "./BodyServicesElement.astro";
+import { BodyServicesInfo } from "@data/body.ts";
+---
+
+<div class="body__services">
+  <div class="body__services-title">
+    <h2>Наши услуги</h2>
+  </div>
+
+  <div class="body__services-grid">
+    {
+      BodyServicesInfo.map((service) => (
+        <BodyServicesElement servicesInfo={service} />
+      ))
+    }
+  </div>
+</div>
