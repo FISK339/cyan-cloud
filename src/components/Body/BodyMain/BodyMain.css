@@ -1,0 +1,300 @@
+.BodyMain__title,
+.BodyMain__description,
+.BodyMain__description::before {
+    transition: transform .12s linear;
+    will-change: transform;
+}
+
+.BodyMain-background-video {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 720px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* Фоновое изображение */
+.BodyMain-background-video img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: 0;
+}
+
+/* Затемнение */
+.BodyMain-background-video::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  z-index: 1;
+}
+
+/* Контент поверх изображения */
+.BodyMain__title,
+.BodyMain__description {
+  position: relative;
+  z-index: 2;
+}
+
+/* Заголовок */
+.BodyMain__title {
+  max-width: 900px;
+  margin-bottom: 72px;
+}
+
+.BodyMain__title h1 {
+  margin: 0;
+
+  color: #fff;
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+/* Описание */
+.BodyMain__description {
+  position: relative;
+  padding-top: 32px;
+}
+
+/* Красная линия */
+.BodyMain__description::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 220px;
+    height: 3px;
+
+    background: #D81F32;
+
+    transform:
+        translateX(-50%)
+        scaleX(0);
+
+    transform-origin: center;
+
+    animation:
+        lineAppear .9s ease-out forwards;
+
+    animation-delay: .8s;
+}
+
+@keyframes lineAppear {
+
+    0%{
+        transform:
+        translateX(-50%)
+        scaleX(0);
+        opacity:0;
+    }
+
+    40%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+        translateX(-50%)
+        scaleX(1);
+        opacity:1;
+    }
+
+}
+
+/* Текст описания */
+.BodyMain__description p {
+  margin: 0;
+
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 56px;
+}
+
+/* Точки между словами */
+.BodyMain__description p::before,
+.BodyMain__description p::after {
+  display: none;
+}
+
+/* Планшет */
+@media (max-width: 1024px) {
+  .BodyMain__title {
+    max-width: 700px;
+    margin-bottom: 56px;
+  }
+
+  .BodyMain__description p {
+    font-size: 1.35rem;
+    gap: 32px;
+  }
+
+  .BodyMain__description::before {
+    width: 180px;
+  }
+}
+
+/* Телефон */
+@media (max-width: 768px) {
+  .BodyMain-background-video {
+    min-height: 600px;
+    padding: 0 24px;
+  }
+
+  .BodyMain__title {
+    margin-bottom: 42px;
+  }
+
+  .BodyMain__title h1 {
+    font-size: clamp(2.2rem, 9vw, 3.6rem);
+  }
+
+  .BodyMain__description {
+    padding-top: 24px;
+  }
+
+  .BodyMain__description::before {
+    width: 140px;
+  }
+
+  .BodyMain__description p {
+    flex-direction: column;
+    gap: 12px;
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
+}
+
+
+.BodyMain__description {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  padding-top: 32px;
+}
+
+.BodyMain__description::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 3px;
+  background: #d51b2e;
+}
+
+.BodyMain__description span {
+  position: relative;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.BodyMain__description span:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -34px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.scroll-indicator {
+
+    position: absolute;
+
+    bottom: 45px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+}
+
+.scroll-indicator span {
+
+    display: block;
+
+    width: 26px;
+    height: 42px;
+
+    border: 2px solid white;
+    border-radius: 18px;
+
+    position: relative;
+
+    opacity: .85;
+}
+
+.scroll-indicator span::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 8px;
+
+    transform: translateX(-50%);
+
+    width: 4px;
+    height: 8px;
+
+    border-radius: 999px;
+
+    background: white;
+
+    animation: wheel 2s infinite;
+}
+
+@keyframes wheel {
+
+    0%{
+
+        opacity:1;
+        transform:
+        translate(-50%,0);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translate(-50%,14px);
+
+    }
+
+}

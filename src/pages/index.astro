@@ -1,4 +1,6 @@
 ---
+import { BodyMain } from "@components/Body/BodyMain";
+import { BodyServices } from "@components/Body/BodyServices";
 import { Footer } from "@components/Footer";
 import Header from "@components/Header.astro";
 import Layout from "../layouts/Layout.astro";
@@ -9,5 +11,9 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <Header />
+  <body>
+    <BodyMain />
+    <BodyServices />
+  </body>
   <Footer />
 </Layout>
