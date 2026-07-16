@@ -1,98 +1,88 @@
 ---
-
-import CLSLogo from '../assets/CLSLogo.svg';
+import CLSLogo from "@assets/svg/CLSLogo.svg";
 const navItems = [
-    { title: "Главная", href: "/" },
-    { title: "Наши услуги", href: "/services" },
-    { title: "Каталог", href: "/catalog" },
-    { title: "О компании", href: "/about" },
-    { title: "Контакты", href: "/contacts" }
+  { title: "Главная", href: "/" },
+  { title: "Наши услуги", href: "/services" },
+  { title: "Каталог", href: "/catalog" },
+  { title: "О компании", href: "/about" },
+  { title: "Контакты", href: "/contacts" },
 ];
 ---
 
 <header class="header">
-    <div class="container right_header_container">
+  <div class="container right_header_container">
+    <a href="/" class="logo">
+      <img src={CLSLogo.src} alt="CLS Logo" />
+    </a>
+  </div>
 
-        <a href="/" class="logo">
-            <img src={CLSLogo.src} alt="CLS Logo" />
-        </a>
-    </div>
-
-    <div class="container left_header_container">
+  <div class="container left_header_container">
     <nav class="nav">
-        <ul class="nav__list">
-            {
-                navItems.map((item) => (
-                    <li>
-                        <a href={item.href}>
-                            {item.title}
-                        </a>
-                    </li>
-                ))
-            }
-        </ul>
+      <ul class="nav__list">
+        {
+          navItems.map((item) => (
+            <li>
+              <a href={item.href}>{item.title}</a>
+            </li>
+          ))
+        }
+      </ul>
     </nav>
-        <a class="phone" href="tel:+74993917570">
-            <span>+7 (499) 391-75-70</span>
-        </a>
-    </div>
+    <a class="phone" href="tel:+74993917570">
+      <span>+7 (499) 391-75-70</span>
+    </a>
+  </div>
 </header>
 
 <style>
-
-* {
+  * {
     font-family: "Roboto", sans-serif;
-}
+  }
 
-.header {
+  .header {
     position: sticky;
     top: 0;
     z-index: 100;
 
     background: #000000;
 
-    box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 
     display: flex;
-    align-items: center;   
+    align-items: center;
     justify-content: space-around;
     height: 8vh;
-}
-.container {
+  }
+  .container {
     display: flex;
-    align-items: center;   
+    align-items: center;
     justify-content: space-around;
-    
+  }
 
-}
-
-.right_header_container {
+  .right_header_container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+  }
 
-}
-
-.left_header_container {
+  .left_header_container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
-}
+  }
 
-.logo img {
+  .logo img {
     display: block;
     width: 180px;
     height: 116px;
-}
+  }
 
-.nav {
+  .nav {
     margin-left: auto;
     margin-right: auto;
-}
+  }
 
-.nav__list {
+  .nav__list {
     display: flex;
     align-items: center;
     gap: 36px;
@@ -100,9 +90,9 @@ const navItems = [
     list-style: none;
     margin: 0;
     padding: 0;
-}
+  }
 
-.nav a {
+  .nav a {
     position: relative;
 
     display: inline-block;
@@ -114,11 +104,10 @@ const navItems = [
 
     padding: 8px 0;
 
-    transition:
-        color .35s cubic-bezier(.4,0,.2,1);
-}
+    transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-.nav a::after {
+  .nav a::after {
     content: "";
 
     position: absolute;
@@ -133,20 +122,19 @@ const navItems = [
     transform: scaleX(0);
     transform-origin: right;
 
-    transition:
-        transform .45s cubic-bezier(.77,0,.175,1);
-}
+    transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
+  }
 
-.nav a:hover::after {
+  .nav a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
-}
+  }
 
-.nav a:hover {
+  .nav a:hover {
     color: #d0d0d0;
-}
+  }
 
-.phone {
+  .phone {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -157,28 +145,23 @@ const navItems = [
     font-weight: 600;
     font-size: 20px;
     padding: 8px 32px;
-}
+  }
 
+  .phone:hover {
+    opacity: 0.8;
+  }
 
-
-.phone:hover {
-    opacity: .8;
-}
-
-@media (max-width: 900px) {
-
+  @media (max-width: 900px) {
     .header__container {
-        height: 72px;
+      height: 72px;
     }
 
     .nav {
-        display: none;
+      display: none;
     }
 
     .phone span {
-        display: none;
+      display: none;
     }
-
-}
-
+  }
 </style>
