@@ -1,0 +1,90 @@
+.body-our-clients {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+}
+
+.body-our-clients__title {
+  margin-bottom: 60px;
+}
+
+.body-our-clients__title h2 {
+  position: relative;
+  display: inline-block;
+
+  margin: 0;
+  padding-bottom: 20px;
+
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.body-our-clients__title h2::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 56px;
+  height: 3px;
+
+  background: #b0004f;
+}
+
+.body-our-clients__scroll {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 10px 4px 20px;
+
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+/*
+ * Карточки не должны сжиматься.
+ * Каждая карточка занимает 280px.
+ */
+.body-our-clients__scroll > * {
+  flex: 0 0 280px;
+}
+
+/* Планшет */
+@media (max-width: 768px) {
+  .body-our-clients__title {
+    margin-bottom: 30px;
+  }
+
+  .body-our-clients__scroll {
+    gap: 16px;
+  }
+
+  .body-our-clients__scroll > * {
+    flex-basis: 240px;
+  }
+}
+
+/* Телефон */
+@media (max-width: 480px) {
+  .body-our-clients__title {
+    margin-bottom: 24px;
+  }
+
+  .body-our-clients__scroll {
+    gap: 12px;
+  }
+
+  .body-our-clients__scroll > * {
+    flex-basis: 210px;
+  }
+}
