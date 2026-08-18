@@ -31,6 +31,15 @@ export const BodyServicesInfo = [
   },
 ];
 
+export const BodyOurClientsImages = [
+  { img: "@assets/BodyOurClientsExample.png", alt: "Клиент 1" },
+  { img: "@assets/BodyOurClientsExample.png", alt: "Клиент 2" },
+  { img: "@assets/BodyOurClientsExample.png", alt: "Клиент 3" },
+  { img: "@assets/BodyOurClientsExample.png", alt: "Клиент 4" },
+  { img: "@assets/BodyOurClientsExample.png", alt: "Клиент 5" },
+  { img: "@assets/BodyOurClientsExample.png", alt: "Клиент 6" },
+];
+
 export const BodyServicesImages = [
   { img: "@assets/BodyServicesExample.png", alt: "Услуга 1" },
   { img: "@assets/BodyServicesExample.png", alt: "Услуга 2" },

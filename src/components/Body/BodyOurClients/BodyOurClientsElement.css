@@ -1,0 +1,96 @@
+.body-our-clients-element {
+  position: relative;
+
+  width: 280px;
+  height: 180px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.body-our-clients-element-image {
+  width: 100%;
+  height: 100%;
+}
+
+.body-our-clients-element-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+/* Затемнение */
+.body-our-clients-element::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.15);
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+
+  pointer-events: none;
+}
+
+/* Hover */
+.body-our-clients-element:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(255, 255, 255, 0.35);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.body-our-clients-element:hover img {
+  transform: scale(1.05);
+
+  filter: brightness(0.8);
+}
+
+.body-our-clients-element:hover::after {
+  opacity: 1;
+}
+
+/* Нажатие */
+.body-our-clients-element:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+/* Планшет */
+@media (max-width: 768px) {
+  .body-our-clients-element {
+    width: 240px;
+    height: 160px;
+  }
+}
+
+/* Телефон */
+@media (max-width: 480px) {
+  .body-our-clients-element {
+    width: 210px;
+    height: 140px;
+  }
+}

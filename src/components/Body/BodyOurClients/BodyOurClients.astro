@@ -1,0 +1,21 @@
+---
+import "./BodyOurClients.css";
+
+import BodyOurClientsElement from "./BodyOurClientsElement.astro";
+
+import { BodyOurClientsImages } from "@data/body.ts";
+---
+
+<div class="body-our-clients">
+  <div class="body-our-clients__title">
+    <h2>Компании, которые доверяют нам</h2>
+  </div>
+
+  <div class="body-our-clients__scroll">
+    {
+      BodyOurClientsImages.map((client) => (
+        <BodyOurClientsElement clientsImage={client} />
+      ))
+    }
+  </div>
+</div>

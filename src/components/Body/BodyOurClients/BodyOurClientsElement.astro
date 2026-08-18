@@ -1,0 +1,13 @@
+---
+import "./BodyOurClientsElement.css";
+
+import type { BodyOurClientsProps } from "./types";
+
+const { clientsImage } = Astro.props as BodyOurClientsProps;
+---
+
+<div class="body-our-clients-element">
+  <div class="body-our-clients-element-image">
+    <img src={clientsImage.img} alt={clientsImage.alt} />
+  </div>
+</div>
