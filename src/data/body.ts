@@ -48,3 +48,8 @@ export const BodyServicesImages = [
   { img: "@assets/BodyServicesExample.png", alt: "Услуга 5" },
   { img: "@assets/BodyServicesExample.png", alt: "Услуга 6" },
 ];
+
+export const BodyContactUsInputInfo = [
+  { label: "Ваше имя", type: "text" },
+  { label: "Ваш email", type: "email" },
+];
