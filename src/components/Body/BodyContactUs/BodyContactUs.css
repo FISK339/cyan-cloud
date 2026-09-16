@@ -1,0 +1,400 @@
+.body-contact-us {
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-bottom: 100px;
+
+  display: grid;
+  grid-template-columns: minmax(360px, 28%) minmax(0, 1fr);
+  gap: clamp(30px, 2.5vw, 60px);
+
+  background-color: #f0f0f0;
+  padding: clamp(40px, 4vw, 80px) clamp(30px, 3.2vw, 70px);
+}
+
+.body-contact-us-left,
+.body-contact-us-right {
+  min-width: 0;
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.body-contact-us-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header {
+  display: block;
+
+  font-size: 48px;
+  line-height: 1.35;
+  font-weight: 600;
+
+  color: #000000;
+}
+
+.form-subheader {
+  display: block;
+
+  margin-top: 32px;
+
+  font-size: 23px;
+  line-height: 1.35;
+  font-weight: 400;
+
+  color: #102b43;
+}
+
+
+/* =========================
+   RIGHT
+========================= */
+
+.body-contact-us-right {
+  width: 100%;
+}
+
+.contact-us-form {
+  width: 100%;
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: clamp(20px, 2vw, 36px);
+  row-gap: 27px;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.contact-us-element {
+  width: 100%;
+  min-width: 0;
+}
+
+.contact-us-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 400;
+
+  color: #8a8a8a;
+}
+
+.contact-us-label p {
+  margin: 0;
+}
+
+.contact-us-input {
+  width: 100%;
+  height: 60px;
+
+  padding: 0 18px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d2d2d2;
+  outline: none;
+
+  background-color: #ffffff;
+
+  font-family: inherit;
+  font-size: 20px;
+  color: #102b43;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact-us-input:hover {
+  border-color: #a9a9a9;
+}
+
+.contact-us-input:focus {
+  border-color: #be1e2d;
+
+  box-shadow: 0 0 0 2px rgba(190, 30, 45, 0.12);
+}
+
+
+
+/* =========================
+   POLITICS
+========================= */
+
+.contact-us-politics {
+  grid-column: 1 / -1;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 0;
+
+  cursor: pointer;
+}
+
+.contact-us-politics-checkbox {
+  flex: 0 0 auto;
+
+  width: 25px;
+  height: 25px;
+
+  margin: 0;
+
+  appearance: none;
+
+  border: 1px solid #c8c8c8;
+  border-radius: 0;
+
+  background-color: #ffffff;
+
+  cursor: pointer;
+
+  position: relative;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+
+.contact-us-politics-checkbox:hover {
+  border-color: #be1e2d;
+}
+
+.contact-us-politics-checkbox:focus-visible {
+  outline: none;
+
+  border-color: #be1e2d;
+
+  box-shadow: 0 0 0 2px rgba(190, 30, 45, 0.12);
+}
+
+.contact-us-politics-checkbox:checked {
+  border-color: #be1e2d;
+  background-color: #be1e2d;
+}
+
+.contact-us-politics-checkbox:checked::after {
+  content: "";
+
+  position: absolute;
+
+  left: 7px;
+  top: 3px;
+
+  width: 7px;
+  height: 13px;
+
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+
+  transform: rotate(45deg);
+}
+.contact-us-politics-text {
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 400;
+
+  color: #8a8a8a;
+}
+
+.contact-us-politics-text a {
+  color: #be1e2d;
+
+  text-decoration: none;
+}
+
+.contact-us-politics-text a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.contact-us-submit {
+  grid-column: 1 / -1;
+
+  justify-self: start;
+
+  min-width: 330px;
+  height: 60px;
+
+  padding: 0 35px;
+
+  border: none;
+
+  background-color: #be1e2d;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.3s ease,
+    background-color 0.25s ease;
+}
+
+/* Светящаяся полоска */
+.contact-us-submit::before {
+  content: "";
+
+  position: absolute;
+
+  left: -100%;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  transition: left 0.35s ease;
+}
+
+.contact-us-submit:hover {
+  background-color: #be1e2d;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(190, 30, 45, 0.25),
+    0 0 25px rgba(190, 30, 45, 0.12);
+}
+
+.contact-us-submit:hover::before {
+  left: 100%;
+}
+
+.contact-us-submit:active {
+  transform: translateY(0);
+
+  box-shadow:
+    0 3px 8px rgba(190, 30, 45, 0.2);
+}
+
+.contact-us-submit:focus-visible {
+  outline: none;
+
+  box-shadow:
+    0 0 0 3px rgba(190, 30, 45, 0.2),
+    0 8px 20px rgba(190, 30, 45, 0.25);
+}
+
+.contact-us-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+
+  transform: none;
+  box-shadow: none;
+}
+
+.contact-us-submit:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.contact-us-submit:disabled::before {
+  display: none;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1200px) {
+  .body-contact-us {
+    grid-template-columns: 380px 1fr;
+    gap: 35px;
+
+    padding: 50px 30px;
+  }
+
+  .form-header {
+    font-size: 40px;
+  }
+
+  .form-subheader {
+    font-size: 20px;
+  }
+
+  .contact-us-label {
+    font-size: 18px;
+  }
+
+  .contact-us-politics-text {
+    font-size: 18px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .body-contact-us {
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    padding: 40px 20px;
+  }
+
+  .form-header {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  .form-subheader {
+    margin-top: 20px;
+
+    font-size: 18px;
+  }
+
+  .contact-us-form {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .contact-us-element {
+    grid-column: 1 / -1;
+  }
+
+  .contact-us-politics {
+    grid-column: 1 / -1;
+    align-items: flex-start;
+  }
+
+  .contact-us-politics-text {
+    font-size: 16px;
+  }
+
+  .contact-us-submit {
+    grid-column: 1 / -1;
+
+    width: 100%;
+    min-width: 0;
+  }
+}

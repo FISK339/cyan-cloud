@@ -1,0 +1,49 @@
+---
+import "./BodyContactUs.css";
+
+import BodyContactUsInput from "./BodyContactUsInput.astro";
+
+import { BodyContactUsInputInfo } from "@data/body.ts";
+---
+
+<div class="body-contact-us">
+  <div class="body-contact-us-left">
+    <span class="form-header">Отправьте заявку<br />на сотрудничество</span>
+
+    <span class="form-subheader">
+      Наши менеджеры свяжутся с вами и<br />
+      ответят на все вопросы
+    </span>
+  </div>
+
+  <div class="body-contact-us-right">
+    <form class="contact-us-form">
+      {
+        BodyContactUsInputInfo.map((InputInfo) => (
+          <BodyContactUsInput InputInfo={InputInfo} />
+        ))
+      }
+
+      <label class="contact-us-politics">
+        <input type="checkbox" class="contact-us-politics-checkbox" required />
+
+        <span class="contact-us-politics-text">
+          Вы соглашаетесь с <a
+            href="https://clifts.ru/politika-konfidencialnosti.html"
+            >политикой конфиденциальности</a
+          >
+        </span>
+      </label>
+
+      <button type="submit" class="contact-us-submit" disabled>
+        Получить консультацию
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  import { initContactUs } from "./checkboxScript.js";
+
+  initContactUs();
+</script>

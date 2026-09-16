@@ -1,0 +1,10 @@
+---
+import type { BodyContactUsProps } from "./types";
+
+const { InputInfo } = Astro.props as BodyContactUsProps;
+---
+
+<div class="contact-us-element">
+  <span class="contact-us-label"><p>{InputInfo.label}</p></span>
+  <input type={InputInfo.type} class="contact-us-input" />
+</div>
