@@ -1,40 +1,21 @@
 import type { FooterBottomProps } from "@components/Footer";
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const catalogue = [
-  { title: "1 Элемент каталога", href: "/catalog" },
-  { title: "2 Элемент каталога", href: "/catalog" },
-  { title: "3 Элемент каталога", href: "/catalog" },
-  { title: "4 Элемент каталога", href: "/catalog" },
-  { title: "5 Элемент каталога", href: "/catalog" },
-  { title: "6 Элемент каталога", href: "/catalog" },
-  { title: "7 Элемент каталога", href: "/catalog" },
-  { title: "8 Элемент каталога", href: "/catalog" },
-  { title: "9 Элемент каталога", href: "/catalog" },
-  { title: "10 Элемент каталога", href: "/catalog" },
+  ...Array.from({ length: 10 }, (_, index) => ({ title: `${index + 1} Элемент каталога`, href: `${baseUrl}catalog/` })),
 ];
 
 const navItemsAbout = [
-  { title: "1 Элемент Компании", href: "/about" },
-  { title: "2 Элемент Компании", href: "/about" },
-  { title: "3 Элемент Компании", href: "/about" },
-  { title: "4 Элемент Компании", href: "/about" },
-  { title: "5 Элемент Компании", href: "/about" },
+  ...Array.from({ length: 5 }, (_, index) => ({ title: `${index + 1} Элемент Компании`, href: `${baseUrl}about/` })),
 ];
 
 const navItemsContacts = [
-  { title: "1 Элемент Контактов", href: "/contacts" },
-  { title: "2 Элемент Контактов", href: "/contacts" },
-  { title: "3 Элемент Контактов", href: "/contacts" },
-  { title: "4 Элемент Контактов", href: "/contacts" },
-  { title: "5 Элемент Контактов", href: "/contacts" },
-  { title: "6 Элемент Контактов", href: "/contacts" },
+  ...Array.from({ length: 6 }, (_, index) => ({ title: `${index + 1} Элемент Контактов`, href: `${baseUrl}contacts/` })),
 ];
 
 const navItemsForClients = [
-  { button: "1 Кнопка для клиентов", href: "/" },
-  { button: "2 Кнопка для клиентов", href: "/" },
-  { button: "3 Кнопка для клиентов", href: "/" },
-  { button: "4 Кнопка для клиентов", href: "/" },
+  ...Array.from({ length: 4 }, (_, index) => ({ button: `${index + 1} Кнопка для клиентов`, href: `${baseUrl}contacts/` })),
 ];
 
 const navItemsDevInfo: FooterBottomProps["developerInfo"] = {
