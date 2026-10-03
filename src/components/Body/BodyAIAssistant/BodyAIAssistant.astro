@@ -1,0 +1,15 @@
+---
+import BodyAIAssistantMainButton from "./BodyAIAssistantMainButton.astro";
+import AIAssistantChatWindow from "./AIAssistantChatWindow.astro";
+
+import "./BodyAIAssistant.css";
+---
+
+<BodyAIAssistantMainButton />
+<AIAssistantChatWindow />
+
+<script>
+  import { initAIAssistantMainButton } from "./script.js";
+
+  initAIAssistantMainButton();
+</script>

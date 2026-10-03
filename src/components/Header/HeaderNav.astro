@@ -1,0 +1,15 @@
+---
+import { navItems } from "@data/header.ts";
+---
+
+<nav class="nav">
+  <ul class="nav__list">
+    {
+      navItems.map((item) => (
+        <li>
+          <a href={item.href}>{item.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

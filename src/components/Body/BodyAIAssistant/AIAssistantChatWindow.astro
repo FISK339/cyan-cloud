@@ -1,0 +1,54 @@
+---
+import "./BodyAIAssistant.css";
+---
+
+<section
+  class="ai-assistant-chat-window"
+  data-ai-assistant-chat
+  aria-label="Чат с AI-ассистентом"
+  aria-hidden="true"
+  hidden
+>
+  <header class="ai-assistant-chat-header">
+    <div>
+      <h2>AI-ассистент</h2>
+      <span>Онлайн</span>
+    </div>
+
+    <button
+      type="button"
+      class="ai-assistant-chat-close"
+      data-ai-assistant-close
+      aria-label="Закрыть AI-ассистента"
+    >
+      &times;
+    </button>
+  </header>
+
+  <div class="ai-assistant-chat-messages" data-ai-assistant-messages>
+    <p class="ai-assistant-chat-message ai-assistant-chat-message--assistant">
+      Здравствуйте! Чем я могу вам помочь?
+    </p>
+  </div>
+
+  <form class="ai-assistant-chat-form" data-ai-assistant-form>
+    <label class="visually-hidden" for="ai-assistant-chat-input"
+      >Сообщение</label
+    >
+    <input
+      id="ai-assistant-chat-input"
+      name="message"
+      type="text"
+      placeholder="Введите сообщение"
+      autocomplete="off"
+      required
+    />
+    <button type="submit" aria-label="Отправить сообщение">Отправить</button>
+  </form>
+</section>
+
+<!-- <script>
+  import { initAIAssistantChatWindow } from "./chatWindowScript.js";
+
+  initAIAssistantChatWindow();
+</script> -->

@@ -1,0 +1,31 @@
+---
+import { Header } from "@components/Header";
+import { Footer } from "@components/Footer";
+import type { CategoryPageData } from "@data/pages";
+import "./CategoryPage.css";
+
+interface Props {
+  page: CategoryPageData;
+}
+
+const { page } = Astro.props;
+---
+
+<Header />
+<main class="category-page">
+  <section class="category-page__hero">
+    <p class="category-page__eyebrow">СитиЛифтСервис</p>
+    <h1>{page.title}</h1>
+    <p class="category-page__description">{page.description}</p>
+  </section>
+
+  <section class="category-page__cards" aria-label={page.title}>
+    {page.cards.map((card) => (
+      <article class="category-card">
+        <h2>{card.title}</h2>
+        <p>{card.text}</p>
+      </article>
+    ))}
+  </section>
+</main>
+<Footer />
