@@ -1,0 +1,9 @@
+---
+import type { BodyAIAssistantInfoProps } from "./types";
+
+const { MessageInfo } = Astro.props as BodyAIAssistantInfoProps;
+---
+
+<div class="ai-info-message">
+    <span class="message-text">{MessageInfo.label}</span>
+</div>

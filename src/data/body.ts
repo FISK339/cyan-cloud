@@ -55,3 +55,8 @@ export const BodyContactUsInputInfo = [
   { label: "Ваше имя", type: "text" },
   { label: "Ваш email", type: "email" },
 ];
+
+export const BodyAIAssistantMessageInfo = [
+  { label: "Здравствуйте! Чем я могу вам помочь?" },
+  { label: "Привет, помоги выбрать оборудование" },
+];

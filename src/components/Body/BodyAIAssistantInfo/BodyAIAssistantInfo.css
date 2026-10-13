@@ -1,0 +1,272 @@
+/* BodyAIAssistantInfo.css */
+
+.ai-assistant-info {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 80px);
+
+  /* Отступы по бокам */
+  margin-top: 30px;
+  padding: clamp(40px, 6vw, 80px) clamp(24px, 6vw, 96px);
+  width: 100%;
+  max-width: 1600px;
+  box-sizing: border-box;
+
+  /* Тёмная основа для анимации частиц */
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  background: #0b0d10;
+  color: #f2f3f5;
+}
+
+/* Левая часть */
+
+.ai-assistant-info_left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+
+  max-width: 560px;
+  position: relative;
+  z-index: 1;
+}
+
+.ai-info-title {
+  display: block;
+}
+
+.ai-info-title h1 {
+  margin: 0;
+
+  color: #f5f0f2;
+  font-size: clamp(28px, 3.2vw, 46px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+
+  /* Бордовое свечение */
+  text-shadow:
+    0 0 12px rgb(128 0 40 / 25%),
+    0 0 30px rgb(128 0 40 / 20%),
+    0 0 55px rgb(128 0 40 / 12%);
+
+  transition:
+    text-shadow 0.35s ease,
+    color 0.35s ease;
+}
+
+/* Усиление свечения при наведении */
+
+.ai-info-title h1:hover {
+  color: #ffffff;
+
+  text-shadow:
+    0 0 10px rgb(160 15 55 / 45%),
+    0 0 25px rgb(160 15 55 / 35%),
+    0 0 50px rgb(160 15 55 / 25%),
+    0 0 80px rgb(128 0 40 / 15%);
+}
+
+.ai-main-info-part {
+  display: block;
+  max-width: 460px;
+
+  color: #a1a6b0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+/* Правая часть */
+
+.ai-assistant-info_right {
+  min-width: 0;
+  width: 100%;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* Область диалога */
+
+.ai-info-messenger {
+  width: 100%;
+  padding: clamp(18px, 3vw, 32px);
+  box-sizing: border-box;
+
+  background: rgb(255 255 255 / 3%);
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 18px;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Контейнер сообщений */
+
+.ai-info-messenger .message {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+/* Общий стиль сообщений */
+
+.ai-info-messenger .message > * {
+  display: block;
+  width: fit-content;
+  max-width: 82%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  padding: 16px 20px;
+
+  color: #e7e9ed;
+  background: rgb(255 255 255 / 5%);
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 14px 14px 14px 4px;
+
+  font-size: 15px;
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+  word-break: normal;
+
+  box-shadow: 0 4px 20px rgb(0 0 0 / 12%);
+
+  animation: ai-message-appear 0.45s ease both;
+}
+
+/* Нечётные сообщения — слева */
+
+.ai-info-messenger .message > *:nth-child(odd) {
+  align-self: flex-start;
+}
+
+/* Чётные сообщения — справа */
+
+.ai-info-messenger .message > *:nth-child(even) {
+  align-self: flex-end;
+
+  background: rgb(100 160 255 / 12%);
+  border-color: rgb(100 160 255 / 25%);
+  border-radius: 14px 14px 4px 14px;
+}
+
+
+/* Фоновый слой с частицами */
+
+.ai-assistant-info {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.ai-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+/* Контент располагается поверх анимации */
+
+.ai-assistant-info_left,
+.ai-assistant-info_right {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Появление сообщений */
+
+@keyframes ai-message-appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Планшеты */
+
+@media (max-width: 900px) {
+  .ai-assistant-info {
+    grid-template-columns: 1fr;
+    gap: 36px;
+
+    padding: 48px 36px;
+  }
+
+  .ai-assistant-info_left {
+    max-width: 640px;
+  }
+
+  .ai-main-info-part {
+    max-width: 560px;
+  }
+}
+
+/* Телефоны */
+
+@media (max-width: 480px) {
+  .ai-assistant-info {
+    gap: 28px;
+    padding: 36px 20px;
+    border-radius: 14px;
+  }
+
+  .ai-assistant-info_left {
+    gap: 16px;
+  }
+
+  .ai-info-title h1 {
+    font-size: 29px;
+  }
+
+  .ai-main-info-part {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .ai-info-messenger {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .ai-info-messenger .message {
+    gap: 12px;
+  }
+
+  .ai-info-messenger .message > * {
+    max-width: 90%;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}
+
+/* Уважение системной настройки уменьшения анимации */
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-info-messenger .message > * {
+    animation: none;
+  }
+}

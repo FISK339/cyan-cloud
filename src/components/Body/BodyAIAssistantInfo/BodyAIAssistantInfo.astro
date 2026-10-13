@@ -1,0 +1,43 @@
+---
+import "./BodyAIAssistantInfo.css";
+
+import BodyAIInfoMessage from "./BodyAIInfoMessage.astro";
+
+import { BodyAIAssistantMessageInfo } from "@data/body";
+---
+
+<div class="ai-assistant-info">
+  <canvas class="ai-particles" aria-hidden="true"></canvas>
+
+  <div class="ai-assistant-info_left">
+    <span class="ai-info-title"
+      ><h1>Наш ИИ помощник проведет вас по сайту</h1></span
+    >
+    <span class="ai-main-info-part"
+      >Используйте нашего ИИ агента, чтобы быстрее и легче найти информацию на
+      сайте. Нажмите кнопку AI и познакомьтесь с нашим ИИ ассистентом уже
+      сейчас!
+    </span>
+  </div>
+  <div class="ai-assistant-info_right">
+    <div class="ai-info-messenger">
+      <div class="message">
+        {
+          BodyAIAssistantMessageInfo.map((MessageInfo) => (
+            <BodyAIInfoMessage MessageInfo={MessageInfo} />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { initAIParticles } from "./ai-particles.js";
+
+  const containers = document.querySelectorAll(".ai-assistant-info");
+
+  containers.forEach((container) => {
+    initAIParticles(container);
+  });
+</script>

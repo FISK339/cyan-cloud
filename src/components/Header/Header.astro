@@ -11,7 +11,40 @@ import HeaderPhone from "./HeaderPhone.astro";
   </div>
 
   <div class="container left_header_container">
-    <HeaderNav />
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-navigation"
+      aria-label="Открыть меню"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div id="site-navigation" class="navigation-wrapper">
+      <HeaderNav />
+    </div>
     <HeaderPhone />
   </div>
 </header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>(".menu-toggle");
+  const navigation = document.querySelector<HTMLElement>(".navigation-wrapper");
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    toggle.setAttribute("aria-label", isOpen ? "Открыть меню" : "Закрыть меню");
+    navigation?.classList.toggle("is-open", !isOpen);
+  });
+
+  navigation?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      toggle?.setAttribute("aria-expanded", "false");
+      toggle?.setAttribute("aria-label", "Открыть меню");
+      navigation.classList.remove("is-open");
+    });
+  });
+</script>
