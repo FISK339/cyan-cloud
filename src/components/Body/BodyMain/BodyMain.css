@@ -21,7 +21,7 @@
 }
 
 /* Фоновое изображение */
-.BodyMain-background-video img {
+.BodyMain-background-video video {
   position: absolute;
   inset: 0;
 
@@ -32,6 +32,8 @@
   object-position: center;
 
   z-index: 0;
+
+  
 }
 
 /* Затемнение */

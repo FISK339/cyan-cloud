@@ -1,3 +1,6 @@
+import bodyServicesImage from "@assets/images/BodyServicesExample.png";
+import bodyClientsImage from "@assets/images/Auchan-logo.png";
+
 const servicesUrl = `${import.meta.env.BASE_URL}services/`;
 
 export const BodyServicesInfo = [
@@ -34,21 +37,21 @@ export const BodyServicesInfo = [
 ];
 
 export const BodyOurClientsImages = [
-  { img: "@assets/BodyOurClientsExample.png", alt: "Клиент 1" },
-  { img: "@assets/BodyOurClientsExample.png", alt: "Клиент 2" },
-  { img: "@assets/BodyOurClientsExample.png", alt: "Клиент 3" },
-  { img: "@assets/BodyOurClientsExample.png", alt: "Клиент 4" },
-  { img: "@assets/BodyOurClientsExample.png", alt: "Клиент 5" },
-  { img: "@assets/BodyOurClientsExample.png", alt: "Клиент 6" },
+  { img: bodyClientsImage.src, alt: "Клиент 1" },
+  { img: bodyClientsImage.src, alt: "Клиент 2" },
+  { img: bodyClientsImage.src, alt: "Клиент 3" },
+  { img: bodyClientsImage.src, alt: "Клиент 4" },
+  { img: bodyClientsImage.src, alt: "Клиент 5" },
+  { img: bodyClientsImage.src, alt: "Клиент 6" },
 ];
 
 export const BodyServicesImages = [
-  { img: "@assets/BodyServicesExample.png", alt: "Услуга 1" },
-  { img: "@assets/BodyServicesExample.png", alt: "Услуга 2" },
-  { img: "@assets/BodyServicesExample.png", alt: "Услуга 3" },
-  { img: "@assets/BodyServicesExample.png", alt: "Услуга 4" },
-  { img: "@assets/BodyServicesExample.png", alt: "Услуга 5" },
-  { img: "@assets/BodyServicesExample.png", alt: "Услуга 6" },
+  { img: bodyServicesImage.src, alt: "Услуга 1" },
+  { img: bodyServicesImage.src, alt: "Услуга 2" },
+  { img: bodyServicesImage.src, alt: "Услуга 3" },
+  { img: bodyServicesImage.src, alt: "Услуга 4" },
+  { img: bodyServicesImage.src, alt: "Услуга 5" },
+  { img: bodyServicesImage.src, alt: "Услуга 6" },
 ];
 
 export const BodyContactUsInputInfo = [
