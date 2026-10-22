@@ -1,5 +1,7 @@
 import bodyServicesImage from "@assets/images/BodyServicesExample.png";
-import bodyClientsImage from "@assets/images/Auchan-logo.png";
+import bodyClientsImageAuchan from "@assets/images/Auchan-logo.png";
+import bodyClientsImageBah from "@assets/images/bah_logo.png";
+import bodyClientsImageDvor from "@assets/images/dvor_logo.png";
 
 const servicesUrl = `${import.meta.env.BASE_URL}services/`;
 
@@ -37,12 +39,12 @@ export const BodyServicesInfo = [
 ];
 
 export const BodyOurClientsImages = [
-  { img: bodyClientsImage.src, alt: "Клиент 1" },
-  { img: bodyClientsImage.src, alt: "Клиент 2" },
-  { img: bodyClientsImage.src, alt: "Клиент 3" },
-  { img: bodyClientsImage.src, alt: "Клиент 4" },
-  { img: bodyClientsImage.src, alt: "Клиент 5" },
-  { img: bodyClientsImage.src, alt: "Клиент 6" },
+  { img: bodyClientsImageAuchan.src, alt: "Клиент 1" },
+  { img: bodyClientsImageBah.src, alt: "Клиент 2" },
+  { img: bodyClientsImageDvor.src, alt: "Клиент 3" },
+  { img: bodyClientsImageAuchan.src, alt: "Клиент 4" },
+  { img: bodyClientsImageBah.src, alt: "Клиент 5" },
+  { img: bodyClientsImageDvor.src, alt: "Клиент 6" },
 ];
 
 export const BodyServicesImages = [
