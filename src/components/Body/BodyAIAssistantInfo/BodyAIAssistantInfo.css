@@ -10,7 +10,7 @@
   margin-top: 30px;
   padding: clamp(40px, 6vw, 80px) clamp(24px, 6vw, 96px);
   width: 100%;
-  max-width: 1600px;
+  max-width: 100%;
   box-sizing: border-box;
 
   /* Тёмная основа для анимации частиц */
