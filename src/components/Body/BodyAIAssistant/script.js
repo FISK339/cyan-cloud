@@ -81,7 +81,7 @@ export async function initAIAssistantMainButton() {
 
     try {
       // Отправляем сообщение на наш backend
-      const response = await fetch("http://localhost:3000/chat", {
+      const response = await fetch("https://clifts-backend.onrender.com/chat", { 
         method: "POST",
 
         headers: {
