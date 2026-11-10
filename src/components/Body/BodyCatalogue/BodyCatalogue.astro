@@ -1,0 +1,23 @@
+---
+import "./BodyCatalogue.css";
+
+import BodyCatalogueElement from "./BodyCatalogueElement.astro";
+import { BodyCatalogueInfo, BodyCatalogueImages } from "@data/body.ts";
+---
+
+<div class="body__catalogue">
+  <div class="body__catalogue-title">
+    <h2>Каталог СитиЛифтСервис</h2>
+  </div>
+
+  <div class="body__catalogue-grid">
+    {
+      BodyCatalogueInfo.map((catalogue, index) => (
+        <BodyCatalogueElement
+          catalogueInfo={catalogue}
+          catalogueImage={BodyCatalogueImages[index]}
+        />
+      ))
+    }
+  </div>
+</div>
